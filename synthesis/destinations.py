@@ -29,7 +29,7 @@ def execute(context):
     
     ## read the educational facilities and attach them to the opportunities
     
-    df_education = pd.read_csv("%s/escolas_enderecos.csv" % context.config("data_path"))
+    df_education = pd.read_csv("%s/escolas_enderecos.csv" % context.config("data_path"), encoding="ISO-8859-1", delimiter=';')
     df_education.rename(columns={'LATITUDE':'y', 'LONGITUDE':'x'}, inplace=True)
     df_facilities_education = df_education[['x', 'y']].copy()
 
@@ -40,6 +40,9 @@ def execute(context):
     df_facilities_education["offers_education"] = True
     df_facilities_education["offers_home"] = False
 
+    # Convert string coordinates to float
+    df_facilities_education['x'] = df_facilities_education['x'].str.replace(',', '.').astype(float)
+    df_facilities_education['y'] = df_facilities_education['y'].str.replace(',', '.').astype(float)
     df_facilities_education = data.spatial.utils.to_gpd(df_facilities_education, crs = {"init" : "EPSG:4326"}).to_crs({"init" : "EPSG:29183"})
     
     df_opportunities = pd.concat([df_opportunities, df_facilities_education], sort = True)

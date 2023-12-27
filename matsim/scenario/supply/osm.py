@@ -26,7 +26,7 @@ def execute(context):
 		<param name="keepWaysWithPublicTransit" value="true" />
 		<param name="maxLinkLength" value="500.0" />
 		<!-- The path to the osm file. -->
-		<param name="osmFile" value="/nas/balacm/Data_SP/osm/sao_paulo.osm.gz" />
+		<param name="osmFile" value="/home/tumtse/Documents/haowu/uam/sao_paulo/data/osm/sao_paulo.osm.gz" />
 		<param name="outputCoordinateSystem" value="EPSG:29183" />
 		<param name="outputNetworkFile" value="network.xml.gz" />
 		<!-- In case the speed limit allowed does not represent the speed a vehicle can actually realize, e.g. by constrains of

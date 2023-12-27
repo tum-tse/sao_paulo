@@ -1,8 +1,8 @@
 ## Synthetic population pipeline for Sao-Paulo
 ## based on the synpp package
 
-# This is the path to a directory where the pipeline can store temporary data
-working_directory: /nas/balacm/SaoPauloSynPP/cache_test
+# This is the path to a directory where the pipeline can store temporary data (need to create the folder manually)
+working_directory: /home/tumtse/Documents/haowu/uam/sao_paulo/working_directory
 
 # This section defines which parts of the pipeline should be run
 run:
@@ -32,9 +32,9 @@ config:
   sampling_rate: 0.01
   random_seed: 1234
 
-  # Paths to the input data and where the output should be stored
-  data_path: /nas/balacm/Data_SP
-  output_path: /nas/balacm/SaoPauloSynPP/output
+  # Paths to the input data and where the output should be stored (need to create the folder manually)
+  data_path: /home/tumtse/Documents/haowu/uam/sao_paulo/data
+  output_path: /home/tumtse/Documents/haowu/uam/sao_paulo/output_path
 
   shapefile_name: "SC2010_RMSP_CEM_V3_all_state.shp"
   shapefile_center_name: "SC2010_RMSP_CEM_V3_center.shp"
